@@ -91,7 +91,7 @@ public class ContentImageController {
 	
 	@SuppressWarnings({ "unchecked"})
 	@PreAuthorize("hasRole('CONTENT')")
-	@RequestMapping(value="/admin/content/images/paging.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/content/images/paging.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String pageImages(HttpServletRequest request, HttpServletResponse response) {
 		AjaxResponse resp = new AjaxResponse();
 
@@ -209,7 +209,7 @@ public class ContentImageController {
 	 * @return
 	 */
 	@PreAuthorize("hasRole('CONTENT')")
-	@RequestMapping(value="/admin/content/removeImage.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/content/removeImage.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String removeImage(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String imageName = request.getParameter("name");
 

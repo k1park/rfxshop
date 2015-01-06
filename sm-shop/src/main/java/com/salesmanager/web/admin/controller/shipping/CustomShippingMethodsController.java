@@ -241,7 +241,7 @@ public class CustomShippingMethodsController {
 	}
 	
 	@PreAuthorize("hasRole('SHIPPING')")
-	@RequestMapping(value="/admin/shipping/weightBased/removeCountry.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/shipping/weightBased/removeCountry.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String deleteCountry(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String country = request.getParameter("regionCode");
 
@@ -286,7 +286,7 @@ public class CustomShippingMethodsController {
 	
 	
 	@PreAuthorize("hasRole('SHIPPING')")
-	@RequestMapping(value="/admin/shipping/weightBased/removePrice.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/shipping/weightBased/removePrice.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String deletePrice(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String weight = request.getParameter("weight");
 		String region = request.getParameter("region");
@@ -366,7 +366,7 @@ public class CustomShippingMethodsController {
 	 * @return
 	 */
 	@PreAuthorize("hasRole('SHIPPING')")
-	@RequestMapping(value="/admin/shipping/checkRegionCode.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/shipping/checkRegionCode.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String checkRegionCode(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String code = request.getParameter("code");
 

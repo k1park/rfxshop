@@ -68,7 +68,7 @@ public class FeaturedItemsController {
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/catalogue/featured/paging.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/catalogue/featured/paging.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String pageProducts(HttpServletRequest request, HttpServletResponse response) {
 		
 		
@@ -122,7 +122,7 @@ public class FeaturedItemsController {
 	}
 	
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/catalogue/featured/addItem.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/catalogue/featured/addItem.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String addItem(HttpServletRequest request, HttpServletResponse response) {
 		
 		String productId = request.getParameter("productId");
@@ -171,7 +171,7 @@ public class FeaturedItemsController {
 	}
 	
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/catalogue/featured/removeItem.html&removeEntity=FEATURED", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/catalogue/featured/removeItem.html&removeEntity=FEATURED", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String removeItem(HttpServletRequest request, HttpServletResponse response) {
 		
 		String productId = request.getParameter("productId");

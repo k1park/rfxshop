@@ -98,7 +98,7 @@ public class ProductPriceController {
 	}
 	
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/products/prices/paging.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/products/prices/paging.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String pagePrices(HttpServletRequest request, HttpServletResponse response) {
 
 		String sProductId = request.getParameter("productId");
@@ -449,7 +449,7 @@ public class ProductPriceController {
 	}
 	
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/products/price/remove.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/products/price/remove.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String deleteProductPrice(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String sPriceid = request.getParameter("priceId");
 

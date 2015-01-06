@@ -143,7 +143,7 @@ public class StoreBrandingController {
 	}
 	
 	@PreAuthorize("hasRole('STORE')")
-	@RequestMapping(value="/admin/store/removeImage.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/store/removeImage.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String removeImage(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 
 		MerchantStore store = (MerchantStore)request.getAttribute(Constants.ADMIN_STORE);

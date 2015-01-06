@@ -65,7 +65,7 @@ public class StaticContentController {
 	 */
 	@SuppressWarnings({ "unchecked"})
 	@PreAuthorize("hasRole('CONTENT')")
-	@RequestMapping(value="/admin/content/static/page.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/content/static/page.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String pageStaticContent(HttpServletRequest request, HttpServletResponse response) {
 		AjaxResponse resp = new AjaxResponse();
 
@@ -188,7 +188,7 @@ public class StaticContentController {
 	 * @return
 	 */
 	@PreAuthorize("hasRole('CONTENT')")
-	@RequestMapping(value="/admin/content/static/removeFile.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/content/static/removeFile.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String removeFile(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String fileName = request.getParameter("name");
 

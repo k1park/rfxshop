@@ -270,7 +270,7 @@ public class OptionsValueController {
 	
 	@SuppressWarnings("unchecked")
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/optionsvalues/paging.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/optionsvalues/paging.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String pageOptions(HttpServletRequest request, HttpServletResponse response) {
 		
 		String optionName = request.getParameter("name");
@@ -332,7 +332,7 @@ public class OptionsValueController {
 	}
 	
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/optionsvalues/remove.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/optionsvalues/remove.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String deleteOptionValue(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String sid = request.getParameter("optionValueId");
 
@@ -372,7 +372,7 @@ public class OptionsValueController {
 	}
 	
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/optionsvalues/removeImage.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/optionsvalues/removeImage.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String removeImage(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String optionValueId = request.getParameter("optionId");
 

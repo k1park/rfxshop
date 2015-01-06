@@ -411,7 +411,7 @@ public class UserController {
 	}
 	
 	@PreAuthorize("hasRole('AUTH')")
-	@RequestMapping(value="/admin/users/checkUserCode.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/users/checkUserCode.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String checkUserCode(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String code = request.getParameter("code");
 		String id = request.getParameter("id");
@@ -636,7 +636,7 @@ public class UserController {
 	}
 	
 	@PreAuthorize("hasRole('AUTH')")
-	@RequestMapping(value="/admin/users/remove.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/users/remove.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String removeUser(HttpServletRequest request, Locale locale) throws Exception {
 		
 		//do not remove super admin
@@ -723,7 +723,7 @@ public class UserController {
 	}
 	
 	//password reset functionality  ---  Sajid Shajahan  
-	@RequestMapping(value="/admin/users/resetPassword.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/users/resetPassword.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String resetPassword(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		
 		AjaxResponse resp = new AjaxResponse();
@@ -777,7 +777,7 @@ public class UserController {
 		return returnString;
 	}
 	//password reset functionality  ---  Sajid Shajahan
-	@RequestMapping(value="/admin/users/resetPasswordSecurityQtn.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/users/resetPasswordSecurityQtn.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String resetPasswordSecurityQtn(@ModelAttribute(value="userReset") UserReset userReset,HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		
 		MerchantStore store = (MerchantStore)request.getAttribute(Constants.ADMIN_STORE);

@@ -222,7 +222,7 @@ public class OptionsController {
 	
 	@SuppressWarnings("unchecked")
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/options/paging.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/options/paging.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String pageOptions(HttpServletRequest request, HttpServletResponse response) {
 		
 		String optionName = request.getParameter("name");
@@ -303,7 +303,7 @@ public class OptionsController {
 		
 	}
 	
-	@RequestMapping(value="/admin/options/remove.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/options/remove.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String deleteOption(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String sid = request.getParameter("optionId");
 

@@ -188,7 +188,7 @@ public class CustomerOptionsSetController {
 	
 	@SuppressWarnings("unchecked")
 	@PreAuthorize("hasRole('CUSTOMER')")
-	@RequestMapping(value="/admin/customers/optionsset/paging.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/customers/optionsset/paging.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String pageOptionsSet(HttpServletRequest request, HttpServletResponse response) {
 
 		AjaxResponse resp = new AjaxResponse();
@@ -276,7 +276,7 @@ public class CustomerOptionsSetController {
 	}
 	
 	@PreAuthorize("hasRole('CUSTOMER')")
-	@RequestMapping(value="/admin/customers/optionsset/remove.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/customers/optionsset/remove.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String deleteOptionSet(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String sid = request.getParameter("id");
 
@@ -320,7 +320,7 @@ public class CustomerOptionsSetController {
 	
 
 	@PreAuthorize("hasRole('CUSTOMER')")
-	@RequestMapping(value="/admin/customers/optionsset/update.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/customers/optionsset/update.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String updateOrder(HttpServletRequest request, HttpServletResponse response) {
 		String values = request.getParameter("_oldValues");
 		String order = request.getParameter("order");

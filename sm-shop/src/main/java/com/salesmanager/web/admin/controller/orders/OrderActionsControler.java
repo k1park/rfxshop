@@ -86,7 +86,7 @@ private static final Logger LOGGER = LoggerFactory.getLogger(OrderActionsControl
 	
 	
 	@PreAuthorize("hasRole('ORDER')")
-	@RequestMapping(value="/admin/orders/captureOrder.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/orders/captureOrder.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String captureOrder(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 
 
@@ -139,7 +139,7 @@ private static final Logger LOGGER = LoggerFactory.getLogger(OrderActionsControl
 	}
 	
 	@PreAuthorize("hasRole('ORDER')")
-	@RequestMapping(value="/admin/orders/refundOrder.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/orders/refundOrder.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String refundOrder(@RequestBody Refund refund, HttpServletRequest request, HttpServletResponse response, Locale locale) {
 
 
@@ -225,7 +225,7 @@ private static final Logger LOGGER = LoggerFactory.getLogger(OrderActionsControl
 	}
 	
 	@PreAuthorize("hasRole('ORDER')")
-	@RequestMapping(value="/admin/orders/printInvoice.html", method=RequestMethod.GET, produces="application/json")
+	@RequestMapping(value="/admin/orders/printInvoice.html", method=RequestMethod.GET, produces="application/json;text/plain;charset=UTF-8")
 	public void printInvoice(HttpServletRequest request, HttpServletResponse response, Locale locale) throws Exception {
 		
 		String sId = request.getParameter("id");
@@ -273,7 +273,7 @@ private static final Logger LOGGER = LoggerFactory.getLogger(OrderActionsControl
 
 	@SuppressWarnings("unchecked")
 	@PreAuthorize("hasRole('ORDER')")
-	@RequestMapping(value="/admin/orders/listTransactions.html", method=RequestMethod.GET, produces="application/json")
+	@RequestMapping(value="/admin/orders/listTransactions.html", method=RequestMethod.GET, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String listTransactions(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		String sId = request.getParameter("id");
@@ -347,7 +347,7 @@ private static final Logger LOGGER = LoggerFactory.getLogger(OrderActionsControl
 	
 
 	@PreAuthorize("hasRole('ORDER')")
-	@RequestMapping(value="/admin/orders/sendInvoice.html", method=RequestMethod.GET, produces="application/json")
+	@RequestMapping(value="/admin/orders/sendInvoice.html", method=RequestMethod.GET, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String sendInvoice(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		String sId = request.getParameter("id");
@@ -411,7 +411,7 @@ private static final Logger LOGGER = LoggerFactory.getLogger(OrderActionsControl
 	
 
 	@PreAuthorize("hasRole('ORDER')")
-	@RequestMapping(value="/admin/orders/updateStatus.html", method=RequestMethod.GET, produces="application/json")
+	@RequestMapping(value="/admin/orders/updateStatus.html", method=RequestMethod.GET, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String updateStatus(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		String sId = request.getParameter("id");
@@ -493,7 +493,7 @@ private static final Logger LOGGER = LoggerFactory.getLogger(OrderActionsControl
 	}
 	
 	@PreAuthorize("hasRole('ORDER')")
-	@RequestMapping(value="/admin/orders/sendDownloadEmail.html", method=RequestMethod.GET, produces="application/json")
+	@RequestMapping(value="/admin/orders/sendDownloadEmail.html", method=RequestMethod.GET, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String sendDownloadEmail(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		String sId = request.getParameter("id");

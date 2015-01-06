@@ -324,7 +324,7 @@ public class TaxRatesController {
 	
 
 	@PreAuthorize("hasRole('TAX')")
-	@RequestMapping(value="/admin/tax/taxrates/remove.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/tax/taxrates/remove.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String removeTaxRate(HttpServletRequest request, Locale locale) throws Exception {
 		
 		//do not remove super admin

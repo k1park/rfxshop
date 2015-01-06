@@ -83,7 +83,7 @@ public class RelatedItemsController {
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/catalogue/related/paging.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/catalogue/related/paging.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String pageRelatedItems(HttpServletRequest request, HttpServletResponse response) {
 		
 		String sProductId = request.getParameter("productId");
@@ -150,7 +150,7 @@ public class RelatedItemsController {
 	}
 	
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/catalogue/related/addItem.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/catalogue/related/addItem.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String addItem(HttpServletRequest request, HttpServletResponse response) {
 		
 		String productId = request.getParameter("productId");
@@ -214,7 +214,7 @@ public class RelatedItemsController {
 	}
 	
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/catalogue/related/removeItem.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/catalogue/related/removeItem.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String removeItem(HttpServletRequest request, HttpServletResponse response) {
 		
 		String productId = request.getParameter("productId");

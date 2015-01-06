@@ -86,7 +86,7 @@ public class ProductImagesController {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/products/images/page.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/products/images/page.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String pageProductImages(HttpServletRequest request, HttpServletResponse response) {
 
 		//String attribute = request.getParameter("attribute");
@@ -240,7 +240,7 @@ public class ProductImagesController {
 
 		
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/products/images/remove.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/products/images/remove.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String deleteImage(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String sImageId = request.getParameter("id");
 

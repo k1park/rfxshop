@@ -81,7 +81,7 @@ public class CustomProductGroupsController {
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/products/groups/paging.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/products/groups/paging.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String pageCustomGroups(HttpServletRequest request, HttpServletResponse response) {
 		
 		
@@ -171,7 +171,7 @@ public class CustomProductGroupsController {
 	}
 	
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/products/groups/remove.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/products/groups/remove.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String removeCustomProductGroup(HttpServletRequest request, HttpServletResponse response) {
 		
 		String groupCode = request.getParameter("code");
@@ -196,7 +196,7 @@ public class CustomProductGroupsController {
 	}
 	
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/products/groups/update.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/products/groups/update.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String activateProductGroup(HttpServletRequest request, HttpServletResponse response) {
 		String values = request.getParameter("_oldValues");
 		String active = request.getParameter("active");
@@ -260,7 +260,7 @@ public class CustomProductGroupsController {
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/products/group/details/paging.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/products/group/details/paging.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String pageProducts(HttpServletRequest request, HttpServletResponse response) {
 		
 		String code = request.getParameter("code");
@@ -316,7 +316,7 @@ public class CustomProductGroupsController {
 	
 	
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/products/group/details/addItem.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/products/group/details/addItem.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String addItem(HttpServletRequest request, HttpServletResponse response) {
 		
 		String code = request.getParameter("code");
@@ -366,7 +366,7 @@ public class CustomProductGroupsController {
 	}
 	
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/products/group/details/removeItem.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/products/group/details/removeItem.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String removeItem(HttpServletRequest request, HttpServletResponse response) {
 		
 		String code = request.getParameter("code");

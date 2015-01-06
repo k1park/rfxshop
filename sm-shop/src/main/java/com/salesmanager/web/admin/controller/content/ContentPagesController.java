@@ -138,7 +138,7 @@ public class ContentPagesController {
 	
 	
 	@PreAuthorize("hasRole('CONTENT')")
-	@RequestMapping(value="/admin/content/remove.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/content/remove.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String removeContent(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String id = request.getParameter("id");
 
@@ -183,7 +183,7 @@ public class ContentPagesController {
 	
 	@SuppressWarnings({ "unchecked"})
 	@PreAuthorize("hasRole('CONTENT')")
-	@RequestMapping(value="/admin/content/page.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/content/page.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String pageStaticContent(@RequestParam("contentType") String contentType, HttpServletRequest request, HttpServletResponse response) {
 		AjaxResponse resp = new AjaxResponse();
 
@@ -287,7 +287,7 @@ public class ContentPagesController {
 	 * @return
 	 */
 	@PreAuthorize("hasRole('CONTENT')")
-	@RequestMapping(value="/admin/content/checkContentCode.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/content/checkContentCode.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String checkContentCode(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		
 		String code = request.getParameter("code");

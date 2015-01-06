@@ -99,7 +99,7 @@ public class ProductAttributeController {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/products/attributes/page.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/products/attributes/page.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String pageAttributes(HttpServletRequest request, HttpServletResponse response) {
 
 		//String attribute = request.getParameter("attribute");
@@ -403,7 +403,7 @@ public class ProductAttributeController {
 	}
 	
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/attributes/attribute/remove.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/attributes/attribute/remove.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String deleteProductPrice(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String sAttributeid = request.getParameter("attributeId");
 
@@ -447,7 +447,7 @@ public class ProductAttributeController {
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@PreAuthorize("hasRole('PRODUCTS')")
-	@RequestMapping(value="/admin/products/attributes/getAttributeType.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/products/attributes/getAttributeType.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String checkAttributeType(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 
 		String sOptionId = request.getParameter("optionId");

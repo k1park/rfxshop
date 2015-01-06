@@ -367,7 +367,7 @@ public class MerchantStoreController {
 	}
 	
 	@PreAuthorize("hasRole('AUTH')")
-	@RequestMapping(value="/admin/store/checkStoreCode.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/store/checkStoreCode.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String checkStoreCode(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 		String code = request.getParameter("code");
 
@@ -408,7 +408,7 @@ public class MerchantStoreController {
 	
 	
 	@PreAuthorize("hasRole('STORE_ADMIN')")
-	@RequestMapping(value="/admin/store/remove.html", method=RequestMethod.POST, produces="application/json")
+	@RequestMapping(value="/admin/store/remove.html", method=RequestMethod.POST, produces="application/json;text/plain;charset=UTF-8")
 	public @ResponseBody String removeMerchantStore(HttpServletRequest request, Locale locale) throws Exception {
 
 		String sMerchantStoreId = request.getParameter("storeId");
