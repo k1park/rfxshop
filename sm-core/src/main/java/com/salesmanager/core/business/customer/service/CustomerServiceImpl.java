@@ -69,13 +69,16 @@ public class CustomerServiceImpl extends SalesManagerEntityServiceImpl<Long, Cus
 		return customerDAO.listByStore(store,criteria);
 	}
 	
+
 	@Override
-	public Address getCustomerAddress(MerchantStore store, String ipAddress) throws ServiceException {
+	public Address getCustomerAddress(MerchantStore store, String ipAddress)/* throws ServiceException*/ { //silent log message by k1park. 2015.1.7
 		
 		try {
 			return geoLocation.getAddress(ipAddress);
 		} catch(Exception e) {
-			throw new ServiceException(e);
+			LOGGER.error(e.getLocalizedMessage());
+			return null;
+			//throw new ServiceException(e);
 		}
 		
 	}

@@ -32,7 +32,7 @@ public interface CustomerService  extends SalesManagerEntityService<Long, Custom
 	 * @throws ServiceException
 	 */
 	Address getCustomerAddress(MerchantStore store, String ipAddress)
-			throws ServiceException;
+			;//throws ServiceException;
 
 
 }
