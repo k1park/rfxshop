@@ -1,0 +1,165 @@
+.swtch-opener {
+	position:absolute;
+	z-index:10000;
+	top:0;
+	right:-40px;
+	width:40px;
+	height:40px;
+	background-color:rgba(42,42,42,0.9);
+	cursor:pointer;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+}
+.swtch-opener i {
+	display:block;
+	line-height:38px;
+	text-align:center;
+	font-size:22px;
+	color:#fff;
+}
+.swtch-opener:hover {background-color:#333;}
+#style-switcher{
+	position:fixed;
+	z-index:9999;
+	top:150px;
+	width:210px;
+}
+.swtch-header{
+	padding:10px 0 10px 20px;
+	background-color:rgba(42,42,42,0.9);
+}
+.swtch-header h4 {
+	margin-bottom:0;
+	text-transform:uppercase;
+	font-weight:700;
+	line-height:20px;
+	font-size:14px;
+	color:#fff;
+}
+.styleswtch {background-color: rgba(63,63,63,0.9);}
+.styleswtch p {
+	margin-bottom:8px;
+	font-size:12px;
+	color:#fff;
+}
+.styleswtch ul {
+	padding:14px 20px 18px;
+	border-bottom:1px solid rgba(255,255,255,0.12);
+}
+
+.ul-layout li {
+	float:left;
+	width:83px;
+	padding:5px 5px 7px;
+	text-decoration:uppercase;
+	font-weight:400;
+	text-align:center;
+	color:#fff;
+	font-size:12px;
+	background-color:rgba(255, 255, 255, 0.12);
+	cursor:pointer;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+}
+.ul-layout li#wide {margin-right:4px;}
+.ul-layout li:hover {background-color:#333;}
+
+.ul-pattern {display:none;}
+body.boxed .ul-pattern {display:block;}
+
+.ul-colors {margin-right:-2px;}
+.ul-colors li{
+	float:left;
+	margin-right:4px;
+	width:25px;
+	height:25px;
+	cursor:pointer;
+}
+.ul-colors li:last-child {margin-right:0;}
+
+#color1 {background: #3a88f4;}
+#color2 {background: #46bb18;}
+#color3 {background: #bb9318;}
+#color4 {background: #2ec7cd;}
+#color5 {background: #842ecd;}
+#color6 {background: #cd2ea2;}
+
+.ul-pattern a {
+	cursor:pointer;
+	float:left;
+	width:25px;
+	height:25px;
+	margin-right:4px;
+	margin-bottom:4px;
+}
+.ul-pattern a.last {margin-right:0;}
+
+#pattern1, #page.pattern1 {background-image:url(../images/patterns/1.png);}
+#pattern2, #page.pattern2 {background-image:url(../images/patterns/2.png);}
+#pattern3, #page.pattern3 {background-image:url(../images/patterns/3.png);}
+#pattern4, #page.pattern4 {background-image:url(../images/patterns/4.png);}
+#pattern5, #page.pattern5 {background-image:url(../images/patterns/5.png);}
+#pattern6, #page.pattern6 {background-image:url(../images/patterns/6.png);}
+#pattern7, #page.pattern7 {background-image:url(../images/patterns/7.png);}
+#pattern8, #page.pattern8 {background-image:url(../images/patterns/8.png);}
+#pattern9, #page.pattern9 {background-image:url(../images/patterns/9.png);}
+#pattern10, #page.pattern10 {background-image:url(../images/patterns/10.png);}
+#pattern11, #page.pattern11 {background-image:url(../images/patterns/11.png);}
+#pattern12, #page.pattern12 {background-image:url(../images/patterns/12.png);}
+
+
+.ul-background {display:none;}
+body.boxed .ul-background {display:block;}
+.ul-background a{
+	cursor:pointer;
+	float:left;
+	width:30px;
+	height:30px;
+	margin-right:5px;
+	margin-bottom:5px;
+	background-repeat:no-repeat;
+	background-size:auto 100%;
+	-webkit-background-size:auto 100%;
+}
+.ul-background a.last {margin-right:0;}
+#background1, #page.background1 {background-image:url(../images/patterns/13.jpg);}
+#background2, #page.background2 {background-image:url(../images/patterns/14.jpg);}
+#background3, #page.background3 {background-image:url(../images/patterns/15.jpg);}
+#background4, #page.background4 {background-image:url(../images/patterns/16.jpg);}
+#background5, #page.background5 {background-image:url(../images/patterns/17.jpg);}
+
+#page.background1, #page.background2, #page.background3, #page.background4, #page.background5 {background-size:cover; background-repeat:no-repeat;}
+
+.stylereset:focus, .stylereset{
+	display:inline-block;
+	padding:5px 15px 7px;
+	margin:20px 10px 20px 20px;
+	background-color:rgba(255, 255, 255, 0.12);
+	text-decoration:none;
+	font-weight:400;
+	color:#fff !important;
+	font-size:12px;
+}
+.stylereset:hover {background-color:#333;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

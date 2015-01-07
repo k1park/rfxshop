@@ -35,8 +35,15 @@
 	</annotation-driven>
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources/ directory -->
+
+	<resources mapping="/font/**" location="/font/" />
+	<resources mapping="/fonts/**" location="/font/" />
+	<resources mapping="/twitter/**" location="/twitter/" />
+	<resources mapping="/css/**" location="/css/" />
+	<resources mapping="/js/**" location="/js/" />
+	<resources mapping="/images/**" location="/images/" />
 	<resources mapping="/resources/**" location="/resources/" />
-	
+		
 	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
  		<beans:property name="viewClass">
   			<beans:value>org.springframework.web.servlet.view.tiles2.TilesView</beans:value> 
@@ -62,7 +69,7 @@
 
 	<!-- Only needed because we require fileupload in the org.springframework.samples.mvc.fileupload package -->
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<beans:property name="maxUploadSize" value="10000000"/>
+		<beans:property name="maxUploadSize" value="5000000000"/>
 	</beans:bean>
 	
 	<beans:bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
