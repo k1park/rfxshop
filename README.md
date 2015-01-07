@@ -1,8 +1,10 @@
 
-this project is duplicated from 
+This project is Duplicated from 
 
-https://github.com/shopizer-ecommerce/shopizer
+Shopizer(https://github.com/shopizer-ecommerce/shopizer)
 
-the goal of this rfxshop project is extends to general purpose business portal.
+The goal of this project is to extend for general purpose business Commerce site.
 
+I'm planning to attach Hippo CMS(http://www.onehippo.org) to Shopier, 
+and add more elegant Home page theme.
 
