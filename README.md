@@ -15,5 +15,5 @@ but If necessary, perhaps i shall crone code.
 below is Projects to be atttached:
 
 CMS for Catalog Manager of Shop Owner : Hippo(http://www.onehippo.org)<br>
-Blogging about Product : Apache Roller (http://http://roller.apache.org)<br>
+Blogging about Product : Apache Roller (http://roller.apache.org)<br>
 Single Sign One for All System : JOSSO (http://www.josso.org)
