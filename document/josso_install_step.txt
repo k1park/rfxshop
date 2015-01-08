@@ -1,0 +1,276 @@
+JOSSO INSTALL Step.
+
+i have installed the gateaway on linux server, 
+and the Agent on my Window 7 PC for Develop.
+
+you can check http://www.josso.org/
+in my case, somewhat difficut to find install documens.
+
+=== GATEWAY Install ====
+
+0. ENVIRONMENT
+
+OS: CentOS release 5.3 (Final)
+JDK: java version "1.7.0_71"
+WAS: apache-tomcat-7.0.57
+DB: 10.0.15-MariaDB-wsrep (Compatable Mysql)
+
+1. DOWNLOAD
+
+down josso at http://sourceforge.net/projects/josso/files/
+not JOSS2 but  JSSO
+(JOSSO2 is box in, so i could not find method of install on linux console.)
+
+in my case, downloaded josso-1.8.9.tar.gz
+
+2. UNCOMPRESS
+cd /usr/local/  (or cd /opt)
+tar xvfz $HOME/josso-1.8.9.tar.gz
+ln -s josso-1.8.9 josso
+
+3. RUN SHELL
+
+cd ./josso/bin
+./josso-gsh
+
+4. INSTALL
+
+tc70: tomcat 7
+tc60: tomcat 6
+
+josso> gateway install --target /usr/local/tomcat --platform tc70
+
+5. DB CREATION.
+
+create database jossodb DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+grant all on jossodb.* to dbuser@'%' identified by 'password';
+ grant all on jossodb.* todbuser@localhost identified by 'password';
+ flush privileges;
+ use jossodb;
+
+DROP TABLE IF EXISTS `JOSSO_USER_ROLE`;
+DROP TABLE IF EXISTS `JOSSO_USER_PROPERTY`;
+DROP TABLE IF EXISTS `JOSSO_USER`;
+DROP TABLE IF EXISTS `JOSSO_ROLE`;
+
+
+CREATE TABLE `JOSSO_ROLE` (
+  `name` varchar(16) NOT NULL,
+  `description` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `JOSSO_USER` (
+  `login` varchar(16) NOT NULL,
+  `passwd` varchar(20) NOT NULL,
+  `name` varchar(64) DEFAULT NULL,
+  `description` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`login`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `JOSSO_USER_PROPERTY` (
+  `login` varchar(16) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `value` varchar(255) NOT NULL,
+  PRIMARY KEY (`login`,`name`), 
+  CONSTRAINT `JOSSO_USER_PROPERTY_ibfk_1` 
+    FOREIGN KEY (`login`) REFERENCES `JOSSO_USER` (`login`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+
+
+CREATE TABLE `JOSSO_USER_ROLE` (
+  `login` varchar(16) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`login`,`name`),
+  KEY `name` (`name`),
+  CONSTRAINT `JOSSO_USER_ROLE_ibfk_2` 
+    FOREIGN KEY (`login`) REFERENCES `JOSSO_USER` (`login`),
+  CONSTRAINT `JOSSO_USER_ROLE_ibfk_1` 
+    FOREIGN KEY (`name`) REFERENCES `JOSSO_ROLE` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+6. SAMPLE DATA INSERTING
+
+INSERT INTO JOSSO_ROLE (NAME,DESCRIPTION) VALUES('role1','The Role1');
+INSERT INTO JOSSO_ROLE (NAME,DESCRIPTION) VALUES('role2','The Role2');
+INSERT INTO JOSSO_ROLE (NAME,DESCRIPTION) VALUES('role3','The Role3');
+
+
+INSERT INTO JOSSO_USER (LOGIN,PASSWD,DESCRIPTION)VALUES('user1', 'user1pwd', 'The User1');
+INSERT INTO JOSSO_USER_ROLE (LOGIN,NAME) VALUES('user1', 'role1');
+INSERT INTO JOSSO_USER_ROLE (LOGIN,NAME) VALUES('user1', 'role2');
+INSERT INTO JOSSO_USER_PROPERTY(LOGIN,NAME,VALUE)VALUES('user1', 'user.name', 'User1 Name');
+INSERT INTO JOSSO_USER_PROPERTY(LOGIN,NAME,VALUE)VALUES('user1', 'user.lastName', 'User1 Last Name');
+INSERT INTO JOSSO_USER_PROPERTY(LOGIN,NAME,VALUE)VALUES('user1', 'user.registrationDate', 'User1 Registration Date');
+
+INSERT INTO JOSSO_USER (LOGIN,PASSWD,DESCRIPTION)VALUES('user2', 'user2pwd', 'The User2') ;
+INSERT INTO JOSSO_USER_ROLE (LOGIN,NAME)VALUES('user2', 'role3'); 
+INSERT INTO JOSSO_USER_PROPERTY(LOGIN,NAME,VALUE)VALUES('user2', 'user.name', 'User2 Name');
+INSERT INTO JOSSO_USER_PROPERTY(LOGIN,NAME,VALUE)VALUES('user2', 'user.lastName', 'User2 Last Name');
+INSERT INTO JOSSO_USER_PROPERTY(LOGIN,NAME,VALUE)VALUES('user2', 'user.registrationDate', 'User2 Registration Date');
+
+7. MYSQL JDBC copy
+
+cd /usr/local/tomcat/webapps/josso/WEB-INF/lib
+cp $HOME/mysql-connector-java-5.1.6.jar ./
+
+
+8 XML File Editing
+
+cd $CATALINA_HOME/lib
+
+vi  josso-gateway-config.xml    106 line
+
+   <!-- COMMENT OUT  Identity, Session and Assertion Stores configuration
+104     <s:import resource="josso-gateway-stores.xml" />
+105     -->
+106     <s:import resource="josso-gateway-db-stores.xml" />
+
+vi josso-gateway-db-stores.xml 
+
+47     <!--COMMENT OUT
+48     <db-istore:datasource-store id="josso-identity-store"
+49                       dsJndiName="java:/DefaultDS"
+50                       userQueryString="SELECT LOGIN AS NAME FROM JOSSO_USER WHERE LOGIN = ?"
+51                       rolesQueryString="SELECT NAME AS ROLE FROM JOSSO_USER_ROLE WHERE LOGIN = ?"
+52                       credentialsQueryString="SELECT LOGIN AS USERNAME, PASSWORD FROM JOSSO_USER WHERE LOGIN = ?"
+53                       userPropertiesQueryString="SELECT NAME, VALUE FROM JOSSO_USER_PROPERTY WHERE LOGIN = ?"
+54                       resetCredentialDml="UPDATE JOSSO_USER SET PASSWORD = ? WHERE LOGIN = ?"
+55                       relayCredentialQueryString="SELECT LOGIN FROM JOSSO_USER WHERE #?# = ?"
+56                       certificateCredentialsQueryString="SELECT CERTIFICATE AS USERCERTIFICATE FROM JOSSO_USER_CERTIFICATE WHERE CN = ?"
+57                                           uidQueryString="SELECT LOGIN FROM JOSSO_USER_CERTIFICATE WHERE CERTIFICATE = ?"/>
+58  -->
+59 <!-- INSERT-->
+60 <db-istore:jdbc-store
+61     id="josso-identity-store"
+62     driverName="com.mysql.jdbc.Driver"
+63     connectionURL="jdbc:mysql://localhost:3306/jossodb"
+64     connectionName="josso"
+65     connectionPassword="passord"
+66     userQueryString="SELECT LOGIN AS NAME FROM JOSSO_USER WHERE LOGIN = ?"
+67     rolesQueryString="SELECT NAME AS ROLE FROM JOSSO_USER_ROLE WHERE LOGIN = ?"
+68     credentialsQueryString="SELECT LOGIN AS USERNAME, PASSWD password FROM JOSSO_USER WHERE LOGIN = ?"
+69     userPropertiesQueryString="SELECT NAME, VALUE FROM JOSSO_USER_PROPERTY WHERE LOGIN = ?"
+70     resetCredentialDml="UPDATE JOSSO_USER SET PASSWD = ? WHERE LOGIN = ?"
+71     relayCredentialQueryString="SELECT LOGIN FROM JOSSO_USER WHERE #?# = ?"
+72     />
+
+vi  josso-gateway-auth.xml
+REMOVE hashAlgorithm, hashEncoding
+40     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+41     <!-- Basic Authentication Scheme                -->
+42     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+43     <basic-authscheme:basic-auth-scheme
+44             id="josso-basic-authentication"
+45             ignorePasswordCase="false"
+46             ignoreUserCase="false">
+47
+48         <basic-authscheme:credentialStore>
+49             <s:ref bean="josso-identity-store"/>
+50         </basic-authscheme:credentialStore>
+51
+52         <basic-authscheme:credentialStoreKeyAdapter>
+53             <s:ref bean="josso-simple-key-adapter"/>
+54         </basic-authscheme:credentialStoreKeyAdapter>
+55
+56     </basic-authscheme:basic-auth-scheme>
+
+
+=== AGENT Install ====
+
+0. ENVIRONMENT
+
+OS: Windows 8.1, 64bit
+JDK:java version "1.7.0_67"
+WAS: apache-tomcat-7.0.30
+DB: 10.0.15-MariaDB-wsrep (Compatable Mysql)
+
+1. DOWNLOAD
+
+down josso at http://sourceforge.net/projects/josso/files/
+
+in my case, downloaded version of josso-1.8.9.zip 
+
+2. UNCOMPRESS
+
+C:\josso-1.8.9
+
+  bin
+  dist
+  etc
+  lib
+
+3. RUN SHELL
+
+
+firstly create blank two foder(win32, Win64). this is only for install script bug. 
+C:\josso-1.8.9\dist\agents\bin\Win32
+C:\josso-1.8.9\dist\agents\bin\Win64
+
+execute dos "cmd"
+
+cd C:\josso-1.8.9\bin
+josso-gsh.bat
+
+4. AGENT INSTALL
+
+josso> agent install --target "C:/Program Files/Apache Software Foundation/Tomcat 7.0" --platform tc70
+
+
+5. XML File Editing
+
+edit C:\Program Files\Apache Software Foundation\Tomcat 7.0\lib\josso-agent-config.xml
+
+36 line
+        <!-- Gateway LOGIN and LOGOUT URLs -->
+        <gatewayLoginUrl>http://gateway-server:port/josso/signon/login.do</gatewayLoginUrl>
+        <gatewayLogoutUrl>http://gateway-server:port/josso/signon/logout.do</gatewayLogoutUrl>
+
+        <!-- Gateway service locator -->
+        <gatewayServiceLocator>
+            <!-- Other properties for ws-service-locator :
+            username, password, servicesWebContext, transportSecurity
+            -->
+            <protocol:ws-service-locator endpoint="gateway-server:port" />
+        </gatewayServiceLocator>
+        <configuration>
+            <agent:agent-configuration>
+                     <agent:partner-app id="sm-shop" context="/sm-shop"/>
+......
+
+
+6. LIB VERSION CHECK
+
+first. start tomcat.
+you can see log fils in tomcat logs folder
+if errors occur. you must upgrade JAR that  josso installed
+at C:\Program Files\Apache Software Foundation\Tomcat 7.0\lib
+
+installed files of my version by josso are:
+
+josso-agent-config.xml
+commons-beanutils-1.6.1.jar
+commons-codec-1.3.jar
+commons-collections-3.0.jar
+commons-digester-1.5.jar
+commons-discovery-0.2.jar
+commons-httpclient-3.1.jar
+commons-lang-2.0.jar
+commons-logging-1.1.1.jar
+commons-logging-api-1.0.4.jar
+commons-modeler-1.1.jar
+josso-agents-bin-1.8.9-jaxws.jar
+josso-agent-shared-1.8.9.jar
+josso-tomcat70-agent-1.8.9.jar
+spring-aop-2.5.5.jar
+spring-beans-2.5.5.jar
+spring-context-2.5.5.jar
+spring-core-2.5.5.jar
+xbean-spring-3.4.3.jar
+
+
+-END-
