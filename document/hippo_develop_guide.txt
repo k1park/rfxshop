@@ -9,5 +9,7 @@ mvn archetype:generate \
 -DarchetypeVersion=2.00.05 \
 -DarchetypeRepository=http://maven.onehippo.com/maven2 \
 -DgroupId=com.rfxsoft \
--DartifactId=rfx-cms \
+-DartifactId=<b>rfx-cms</b> \
 -Dversion=1.0-SNAPSHOT
+
+2. you can find '<b>rfx-cms</b>' project folder
