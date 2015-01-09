@@ -67,7 +67,7 @@ there are 6 errors in [Problems Tab] in my case. for exampe like
 4> Plugin execution not covered by lifecycle configuration: com.googlecode.mavenfilesync:maven-filesync-plugin:1.0.0:generate (execution: default, phase: initialize)
    error
     open '/rfx-cms-essentials/pom.xml' file
-    tuck <plugins></plugins> with <pluginManagement></pluginManagement> brace.
+    embrace <plugins></plugins> with <pluginManagement></pluginManagement> brace.
      <pluginManagement>  <!--Added -->
       <plugins>
         <plugin>
@@ -78,9 +78,9 @@ there are 6 errors in [Problems Tab] in my case. for exampe like
       </plugins>
     </pluginManagement> <!--Added -->
     open '/rfx-cms-cms/pom.xml' file
-    tuck again like above
+    embrace again like above
     open '/rfx-cms-site/pom.xml' file
-    tuck again like above
+    embrace again like above
 
 all is prepared.
 good job.
