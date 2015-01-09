@@ -100,7 +100,24 @@ there are 6 errors in [Problems Tab] in my case. for exampe like
  
  select [rfx-cms-site] project by right btn. -> Run as [Run on Server] -> [Next] -> [Finish]
  
- [Error !!]
+ [Error !!] --> need to Check again.
+ 
+ 6. Maven Run
+  1> open the CMD window.
+  2> cd ...workspace/rfx-cms(project root folder)
+  mvn -P cargo.run
+
+ 7. Browser open
+  http://localhost:8080/cms
+  id: admin, passwoed: admin  --> Login OK
+  
+  http://localhost:8080/essentials --> ok
+  
+  
+  http://localhost:8080/site  --> Error cause: msiising TLDs.
+  
+  
+  
  
  
 
