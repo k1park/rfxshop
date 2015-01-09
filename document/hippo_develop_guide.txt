@@ -92,7 +92,15 @@ there are 6 errors in [Problems Tab] in my case. for exampe like
    site/target/site.war
    essentials/target/essentials.war
 
-
+5. eclipse WST run
+ select [rfx-cms-site] project by right btn. -> Properties
+ Targeted Runtimes -> [New] -> select Apache Tomcat v7.0 -> [Next]
+ [Boowse] Tomcat install path -> Select JRE 7.x -> [Finish]
+ check Apache Tomcat v7.0 -> [OK]
+ 
+ select [rfx-cms-site] project by right btn. -> Run as [Run on Server] -> [Next] -> [Finish]
+ 
+ [Error !!]
  
  
 
