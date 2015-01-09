@@ -10,7 +10,7 @@ and add more elegant responsive home page theme.
 
 if possible, i don't want to change original source.
 i will only use APIs.
-but If necessary, perhaps i shall crone code.
+but If necessary, it can be possible to edit a source code.
 
 below is Projects to be atttached:
 
