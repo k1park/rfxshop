@@ -1,5 +1,5 @@
 
-today is : 2015. 01. 09
+today is : 2015. 01. 09 (YYYY. MM. DD)
 
 1. create project by MVN
 
