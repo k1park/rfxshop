@@ -1,15 +1,87 @@
 
 today is : 2015. 01. 09 (YYYY. MM. DD)
 
+reference : http://www.onehippo.org/trails/getting-started/hippo-essentials-getting-started.html
+Hippo Development site is very well arranged and good to read.
+but for me. a little verbose. the below is essential.
+
+0. environment
+
+IDE: Eclipse Version: Luna Service Release 1 (4.4.1)
+JDK: java version "1.7.0_67"
+MVN: apache-maven-3.2.3
+MVN eclipse Plugin installed:
+      can be easily found Eclipse Marketplace in [Help popup menu on Ecclipse].
+
 1. create project by MVN
+
+run command.
 
 mvn archetype:generate \
 -DarchetypeGroupId=org.onehippo.cms7 \
 -DarchetypeArtifactId=hippo-project-archetype \
 -DarchetypeVersion=2.00.05 \
 -DarchetypeRepository=http://maven.onehippo.com/maven2 \
--DgroupId=com.rfxsoft \
--DartifactId=<b>rfx-cms</b> \
+-DgroupId=com.rfxsoft \   
+-DartifactId=rfx-cms \    
 -Dversion=1.0-SNAPSHOT
 
-2. you can find '<b>rfx-cms</b>' project folder
+com.rfxsoft and rfx-cms can be changed by your own.
+
+2. IMPORT project
+
+you can find created 'rfx-cms' project folder.
+
+File -> import -> Maven/Existing Maven Project
+select above project pom files.
+7 Set of project is will be displayed.
+
+in my case..
+
+rfx-cms                           
+  rfx-cms-bootstrap                ---> resources of repository
+     rfx-cms-bootstrap-configuration  
+     rfx-cms-bootstrap-content
+  rfx-cms-cms                       ---> CMS WEB Application
+     rfx-cms-essentials             
+     rfx-cms-site                   
+
+3. Remove Problem (if you don't have errors, just skip)
+
+there are 6 errors in [Problems Tab] in my case. for exampe like 
+'Project configuration is not up-to-date with pom.xml. Run Maven->Update Project or use Quick Fix.'.
+1> click right button. and click [Quick Fix]
+2> comment out in /rfx-cms-site/src/main/webapp/WEB-INF/jspf/taglibs.jspf
+  <!-- <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %> -->
+3> Invalid content was found starting with element 'tracking-mode'. 
+ /rfx-cms-cms/src/main/webapp/WEB-INF/web.xml
+ change xml version 2.5 -> 3.0
+ ------
+ <web-app xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    version="3.0" 
+    id="cms">
+----
+ select projet with right butten -> [Project Facet] -> Change 'Dynamic Web Module' to 3.0 
+4> Plugin execution not covered by lifecycle configuration: com.googlecode.mavenfilesync:maven-filesync-plugin:1.0.0:generate (execution: default, phase: initialize)
+   error
+    open '/rfx-cms-essentials/pom.xml' file
+    tuck <plugins></plugins> with <pluginManagement></pluginManagement> brace.
+     <pluginManagement>  <!--Added -->
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.cargo</groupId>
+          .....
+                  </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement> <!--Added -->
+    open '/rfx-cms-cms/pom.xml' file
+    tuck again like above
+    open '/rfx-cms-site/pom.xml' file
+    tuck again like above
+
+all is prepared.
+good job.
+
