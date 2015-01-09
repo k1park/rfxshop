@@ -82,6 +82,17 @@ there are 6 errors in [Problems Tab] in my case. for exampe like
     open '/rfx-cms-site/pom.xml' file
     embrace again like above
 
-all is prepared.
-good job.
+4. build
+ 
+ Project select by right btn. -> run as maven buils
+ you can get 2 jar, 3 war
+   bootstrap/configuration/target/rfx-cmd-bootstrap-configuration-1.01.00-SNAPSHOT.jar
+   bootstrap/content/target/rfx-cmd-bootstrap-content-1.01.00-SNAPSHOT.jar
+   cms/target/cms.war
+   site/target/site.war
+   essentials/target/essentials.war
+
+
+ 
+ 
 
