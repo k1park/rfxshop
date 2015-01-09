@@ -1,0 +1,13 @@
+
+today is : 2015. 01. 09
+
+1. create project by MVN
+
+mvn archetype:generate \
+-DarchetypeGroupId=org.onehippo.cms7 \
+-DarchetypeArtifactId=hippo-project-archetype \
+-DarchetypeVersion=2.00.05 \
+-DarchetypeRepository=http://maven.onehippo.com/maven2 \
+-DgroupId=com.rfxsoft \
+-DartifactId=rfx-cms \
+-Dversion=1.0-SNAPSHOT
