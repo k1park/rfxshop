@@ -1,3 +1,5 @@
+today is 2015. 01. 08 (YYYY. MM. DD)
+
 JOSSO INSTALL Step.
 
 i have installed the gateaway on linux server, 
