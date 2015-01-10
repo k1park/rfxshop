@@ -1,0 +1,4 @@
+today 2015.01.10
+
+down from http://directory.apache.org/apacheds/download/download-linux-bin.html
+apacheds-2.0.0-M19.tar.gz
