@@ -625,24 +625,25 @@
   margin-bottom: 5px;
   color: #333333;
 }
+/*SM Grid Error Block start*/
 .sm input,
 .sm textarea,
 .sm select,
 .sm .uneditable-input {
-  display: inline-block;
-  width: 210px;
-  height: 18px;
-  padding: 4px;
-  margin-bottom: 9px;
-  font-size: 13px;
-  line-height: 18px;
-  color: #555555;
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
+    display: inline-block;
+    width: 180px;
+    height: 18px;
+    padding: 1px;
+    margin-bottom: 1px;
+    font-size: 11px;
+    line-height: 13px;
+    color: #555555;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}/*SM Grid Error Block end*/
 .sm .uneditable-textarea {
   width: auto;
   height: auto;
