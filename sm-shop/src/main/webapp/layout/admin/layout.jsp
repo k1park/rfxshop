@@ -14,8 +14,8 @@ response.setDateHeader ("Expires", -1);
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
- 
 
+<!-- layout.jsp-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   
  <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
@@ -25,11 +25,9 @@ response.setDateHeader ("Expires", -1);
  
  
  <html xmlns="http://www.w3.org/1999/xhtml"> 
- 
- 
+
      <head>
-     
-     
+
         	 	<meta charset="utf-8">
     			<title><s:message code="label.storeadministration" text="Store administration" /></title>
     			<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,15 +36,9 @@ response.setDateHeader ("Expires", -1);
     			
     			<script src="<c:url value="/resources/js/bootstrap/jquery.js" />"></script>
     			<script src="<c:url value="/resources/js/jquery.friendurl.min.js" />"></script>
- 
-  
+                <link href="<c:url value="/css/myAdmin.css" />" rel="stylesheet">
+
                 <jsp:include page="/common/adminLinks.jsp" />
-                
-                
-
-
- 	
- 	
  	</head>
  
  	<body class="body">
@@ -61,13 +53,7 @@ response.setDateHeader ("Expires", -1);
   			<div class="span4"><a class="brand" href="#"><img src="<c:url value="/resources/img/shopizer_small.jpg" />"/></a></div>
 
   			<div class="span4 offset4">
-  			
-  			
 
-  			
-  			
-  			
-  			
 
 					<div class="btn-group pull-right">
 						<div class="nav-collapse">
@@ -149,7 +135,7 @@ response.setDateHeader ("Expires", -1);
   
   
 		<footer> 
- 			<p>&copy; Shopizer 2010-<%=Calendar.getInstance().get(Calendar.YEAR)%></p> 
+ 			<p>&copy; RFxSoft Inc. <%=Calendar.getInstance().get(Calendar.YEAR)%></p>
 		</footer> 
   
   

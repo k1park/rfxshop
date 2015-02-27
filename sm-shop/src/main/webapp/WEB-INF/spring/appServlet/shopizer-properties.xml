@@ -49,7 +49,7 @@
 	<util:list id="templates" value-type="java.lang.String">
 		<value>bootstrap</value>
 		<value>bootstrap3</value>
-		<value>catholicity</value>
+		<!--<value>catholicity</value>-->
     </util:list>
     
     <bean id="initData" class="com.salesmanager.web.init.data.InitStoreData"/>

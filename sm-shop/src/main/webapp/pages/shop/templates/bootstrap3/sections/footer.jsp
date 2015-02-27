@@ -57,7 +57,7 @@ response.setDateHeader ("Expires", -1);
 								</li>
                         	</sec:authorize>
                         	<sec:authorize access="!hasRole('AUTH_CUSTOMER') and !fullyAuthenticated">
-								<li><a href="#"><s:message code="button.label.signin" text="Signin" /></a></li>
+								<li><a href="${pageContext.request.contextPath}/shop/customer/customLogon.html"><s:message code="button.label.signin" text="Signin" /></a></li>
 							</sec:authorize>
 				</ul>
 			</c:if>

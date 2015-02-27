@@ -22,10 +22,9 @@ response.setDateHeader ("Expires", -1);
   
  <c:set var="lang" scope="request" value="${requestScope.locale.language}"/> 
  
- 
+ <!-- noSkinLayout.jsp-->
  <html xmlns="http://www.w3.org/1999/xhtml"> 
- 
- 
+
      <head>
      
      

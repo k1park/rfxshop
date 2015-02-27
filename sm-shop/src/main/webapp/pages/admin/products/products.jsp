@@ -3,10 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
-<%@ page session="false" %>				
-				
-
-
+<%@ page session="false" %>
 
 <div class="tabbable">
 
@@ -94,60 +91,57 @@
     								selectionType:"single",
     								animateRowsMaxTime:750
 							  });
-							  
-							  
-							  isc.ListGrid.create({
+
+isc.defineClass("CountryListGrid", "ListGrid").addProperties({
+    border:0,
+    dataSource: "products",
+    showRecordComponents: true,
+    showRecordComponentsByCell: true,
+    canRemoveRecords: true,
+    autoFetchData: false,
+    showFilterEditor: true,
+    filterOnKeypress: true,
+    dataFetchMode:"paged",
+
+    fields:[
+
+        {title:"<s:message code="label.entity.id" text="Id"/>", name:"productId", canFilter:false},
+        {title:"<s:message code="label.entity.name" text="Name"/>", name:"name"},
+        {title:"<s:message code="label.product.sku" text="Sku"/>", name:"sku"},
+        {title:"<s:message code="label.product.available" text="Available"/>", name:"available",type:"boolean"},
+        //{title:"<s:message code="label.quantity" text="Quantity"/>", name:"quantity", canFilter:false},
+        {title:"<s:message code="label.entity.details" text="Details"/>", name: "buttonField", align: "center",canFilter:false,canSort:false, canReorder:false}
+
+    ],
+    selectionType: "single",
+    removeData: function () {
+        if (confirm('<s:message code="label.entity.remove.confirm" text="Do you really want to remove this record ?" />')) {
+            return this.Super("removeData", arguments);
+        }
+    },
+    createRecordComponent : function (record, colNum) {
+
+        var fieldName = this.getFieldName(colNum);
+        if (fieldName == "buttonField") {
+
+
+            var button = isc.IButton.create({
+                height: 18,
+                width: 65,
+                title: "<s:message code="label.entity.details" text="Details"/>",
+                click: function () {
+                    window.location = '<c:url value="/admin/products/editProduct.html" />?id=' + record["productId"];
+                }
+            });
+            return button;
+
+        }
+    }
+});
+
+							  isc.CountryListGrid.create({
     								ID: "itemList",
-    								border:0,
-    								dataSource: "products",
-    								showRecordComponents: true,    
-    								showRecordComponentsByCell: true,
-    								canRemoveRecords: true,
-    								autoFetchData: false,
-    								showFilterEditor: true,
-    								filterOnKeypress: true,
-									dataFetchMode:"paged",
-
-
-    						      fields:[
-    						              
-    						              
-										{title:"<s:message code="label.entity.id" text="Id"/>", name:"productId", canFilter:false},
-										{title:"<s:message code="label.entity.name" text="Name"/>", name:"name"},
-										{title:"<s:message code="label.product.sku" text="Sku"/>", name:"sku"},
-										{title:"<s:message code="label.product.available" text="Available"/>", name:"available",type:"boolean"},
-										//{title:"<s:message code="label.quantity" text="Quantity"/>", name:"quantity", canFilter:false},
-										{title:"<s:message code="label.entity.details" text="Details"/>", name: "buttonField", align: "center",canFilter:false,canSort:false, canReorder:false}  
-
-
-    							   ],
-	       						   selectionType: "single",
-								   removeData: function () {
-										if (confirm('<s:message code="label.entity.remove.confirm" text="Do you really want to remove this record ?" />')) {
-											return this.Super("removeData", arguments);
-										}
-								   },
-    							   createRecordComponent : function (record, colNum) {  
-        
-        							var fieldName = this.getFieldName(colNum);
-        							if (fieldName == "buttonField") {  
-
-	        						
-    	           						var button = isc.IButton.create({
-	                						height: 18,
-	                						width: 65,
-	               					 		title: "<s:message code="label.entity.details" text="Details"/>",
-	                						click : function () {
-	                							window.location='<c:url value="/admin/products/editProduct.html" />?id=' + record["productId"];
-	                						}
-	            						});
-	            						return button;   
-            				
-            					}
- 
-    						  }
-
-
+                                      baseStyle: "myBoxedGridCellDark"
 								});
 
 

@@ -51,7 +51,7 @@ response.setDateHeader ("Expires", -1);
                         <div class="col-xs-6 col-md-6">
                             <div class="left-section">
 								<a href="">Forgot your password?</a>
-								<a href="">Sign up now</a>
+								<a href="${pageContext.request.contextPath}/shop/customer/registration.html">Sign up now</a>
 							</div>
                         </div>
                         <div class="col-xs-6 col-md-6 pull-right">

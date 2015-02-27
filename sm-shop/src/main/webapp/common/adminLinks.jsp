@@ -6,12 +6,13 @@
 <%@ page session="false" %>
 
     <!-- Le styles -->
-    
+
     <link href="<c:url value="/resources/css/bootstrap/css/sm-bootstrap.css" />" rel="stylesheet">
+<!--
     <link href="<c:url value="/resources/css/sm-bootstrap-responsive.css" />" rel="stylesheet">
-    
- 
- 
+-->
+
+
 
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->

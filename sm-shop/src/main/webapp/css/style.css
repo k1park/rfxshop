@@ -758,7 +758,7 @@ ul.contact_info li span {
 	margin:0;
 	padding:12px 55px 13px 17px;
 	line-height:20px;
-	font-size:12x;
+	font-size:12px;
 	color:#b5b5b5;
 	border:0;
 	border-radius:0;
@@ -2059,7 +2059,7 @@ footer .tweet_module .tweet_time a {color:#42ac48;}
 	margin-top: 1px;
 	cursor: w-resize;
 	transition: none !important;
-	-webkit-transition: !important;
+	/*-webkit-transition: !important;*/
 }
 #price-range .ui-slider .ui-slider-range {
 	position: absolute;
