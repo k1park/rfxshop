@@ -69,8 +69,18 @@
 					<div class="container">
 						
 						<!-- LOGO -->
-						<div class="logo">
-							<a href="index.jsp" ><img src="images/logo.png" alt="" /></a>
+						<div class="breadcrumbs_content" style='margin:10px;vertial-align:middle;'>
+							<h1 class="pull-left"><a href="index.jsp" ><img src="images/logo.png" alt="" /></a></h1>
+							<ol class="pull-right breadcrumb">
+								<li>
+								</li>
+								<li><div class="sidepanel widget_search">
+									<form class="search_form" action="#" method="" name="">
+										<input type="text" name="Search the site..." value="Search the site..." onFocus="if (this.value == 'Search the site...') this.value = '';" onBlur="if (this.value == '') this.value = 'Search the site...';" />
+									</form>
+								</div><!-- //Search -->
+								</li>
+							</ol>
 						</div><!-- LOGO -->
 					</div><!-- //CONTAINER -->
 					
