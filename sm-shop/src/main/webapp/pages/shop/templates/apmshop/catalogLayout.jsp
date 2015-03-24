@@ -58,11 +58,19 @@
 					
 					<!-- CONTAINER -->
 					<div class="container">
-						
-						<!-- LOGO -->
 						<div class="logo">
-							<a href="index.jsp" ><img src="images/logo.png" alt="" /></a>
-						</div><!-- LOGO -->
+							<a href="index.jsp" ><h1 class="pull-left">APM ... Automation, Parts for Make</h1></a>
+							<ol class="pull-right breadcrumb">
+								<li>								<div class="sidepanel widget_search">
+									<form class="search_form" action="#" method="" name="">
+										<input type="text" name="Search the site..." value="Search the site..." onFocus="if (this.value == 'Search the site...') this.value = '';" onBlur="if (this.value == '') this.value = 'Search the site...';" />
+									</form>
+								</div><!-- //Search --></li>
+
+							</ol>
+						</div>
+
+					
 					</div><!-- //CONTAINER -->
 					
 					
