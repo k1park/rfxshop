@@ -25,7 +25,7 @@ public class StoreLogoUrlTag extends TagSupport {
 	private static final Logger LOGGER = LoggerFactory.getLogger(StoreLogoUrlTag.class);
 	private static final String RESOURCES = "resources";
 	private static final String IMG = "img";
-	private static final String SHOPIZER_LOGO = "shopizer_small.png";
+	private static final String SHOPIZER_LOGO = "makeknow_small.png";
 
 
 	public int doStartTag() throws JspException {

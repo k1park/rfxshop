@@ -325,8 +325,11 @@
 							</p>
 						</div>
 						<div style="float: right;">
+						<h1>MakeKnow</h1>
+						<!-- 
 							<img alt="go to www.shopizer.com"
 								src="<c:url value="/resources/img/shopizer_small.png" />">
+								 -->
 						</div>
 					</div>
 
