@@ -11,7 +11,7 @@ import com.salesmanager.core.business.catalog.product.model.Product;
 import com.salesmanager.core.business.common.model.Description;
 
 @Entity
-@Table(name = "PRODUCT_DESCRIPTION", schema="SALESMANAGER", uniqueConstraints={
+@Table(name = "S1_PRODUCT_DESCRIPTION", schema="SALESMANAGER", uniqueConstraints={
 	@UniqueConstraint(columnNames={
 			"PRODUCT_ID",
 			"LANGUAGE_ID"

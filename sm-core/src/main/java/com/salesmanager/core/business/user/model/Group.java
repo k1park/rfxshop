@@ -27,7 +27,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 
 @Entity
 @EntityListeners(value = AuditListener.class)
-@Table(name = "SM_GROUP", schema=SchemaConstant.SALESMANAGER_SCHEMA)
+@Table(name = "S1_SM_GROUP", schema=SchemaConstant.SALESMANAGER_SCHEMA)
 public class Group extends SalesManagerEntity<Integer, Group> implements Auditable {
 
 	/**

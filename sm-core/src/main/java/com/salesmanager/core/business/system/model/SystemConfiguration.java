@@ -25,7 +25,7 @@ import com.salesmanager.core.constants.SchemaConstant;
  */
 @Entity
 @EntityListeners(value = AuditListener.class)
-@Table(name = "SYSTEM_CONFIGURATION", schema= SchemaConstant.SALESMANAGER_SCHEMA)
+@Table(name = "S1_SYSTEM_CONFIGURATION", schema= SchemaConstant.SALESMANAGER_SCHEMA)
 public class SystemConfiguration extends SalesManagerEntity<Long, SystemConfiguration> implements Serializable, Auditable {
 	private static final long serialVersionUID = 6831573162350751684L;
 	

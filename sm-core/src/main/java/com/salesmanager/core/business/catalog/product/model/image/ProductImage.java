@@ -22,7 +22,7 @@ import com.salesmanager.core.business.catalog.product.model.Product;
 import com.salesmanager.core.business.generic.model.SalesManagerEntity;
 
 @Entity
-@Table(name = "PRODUCT_IMAGE", schema="SALESMANAGER")
+@Table(name = "S1_PRODUCT_IMAGE", schema="SALESMANAGER")
 public class ProductImage extends SalesManagerEntity<Long, ProductImage> {
 	private static final long serialVersionUID = 247514890386076337L;
 	

@@ -10,7 +10,7 @@ import com.salesmanager.core.business.common.model.Description;
 import com.salesmanager.core.business.reference.language.model.Language;
 
 @Entity
-@Table(name="ZONE_DESCRIPTION", uniqueConstraints={
+@Table(name = "S1_ZONE_DESCRIPTION", uniqueConstraints={
 		@UniqueConstraint(columnNames={
 			"ZONE_ID",
 			"LANGUAGE_ID"

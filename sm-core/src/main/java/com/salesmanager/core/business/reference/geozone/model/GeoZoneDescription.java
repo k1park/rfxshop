@@ -9,7 +9,7 @@ import javax.persistence.UniqueConstraint;
 import com.salesmanager.core.business.common.model.Description;
 
 @Entity
-@Table(name="GEOZONE_DESCRIPTION", schema="SALESMANAGER", uniqueConstraints={
+@Table(name = "S1_GEOZONE_DESCRIPTION", schema="SALESMANAGER", uniqueConstraints={
 		@UniqueConstraint(columnNames={
 			"GEOZONE_ID",
 			"LANGUAGE_ID"

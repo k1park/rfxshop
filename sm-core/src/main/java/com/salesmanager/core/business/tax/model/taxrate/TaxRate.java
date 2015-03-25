@@ -51,7 +51,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 
 @Entity
 @EntityListeners(value = AuditListener.class)
-@Table(name = "TAX_RATE" , schema = SchemaConstant.SALESMANAGER_SCHEMA,uniqueConstraints={
+@Table(name = "S1_TAX_RATE" , schema = SchemaConstant.SALESMANAGER_SCHEMA,uniqueConstraints={
 		@UniqueConstraint(columnNames={
 				"TAX_CODE",
 				"MERCHANT_ID"

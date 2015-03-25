@@ -22,7 +22,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 import com.salesmanager.core.utils.CloneUtils;
 
 @Entity
-@Table (name="FILE_HISTORY", schema=SchemaConstant.SALESMANAGER_SCHEMA, uniqueConstraints={
+@Table(name = "S1_FILE_HISTORY", schema=SchemaConstant.SALESMANAGER_SCHEMA, uniqueConstraints={
 		@UniqueConstraint(
 			columnNames={
 				"MERCHANT_ID",

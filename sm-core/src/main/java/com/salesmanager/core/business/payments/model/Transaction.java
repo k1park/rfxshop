@@ -40,7 +40,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 
 @Entity
 @EntityListeners(value = AuditListener.class)
-@Table(name = "SM_TRANSACTION", schema= SchemaConstant.SALESMANAGER_SCHEMA)
+@Table(name = "S1_SM_TRANSACTION", schema= SchemaConstant.SALESMANAGER_SCHEMA)
 public class Transaction extends SalesManagerEntity<Long, Transaction> implements Serializable, Auditable, JSONAware {
 	
 	

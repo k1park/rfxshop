@@ -34,7 +34,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 import com.salesmanager.core.utils.CloneUtils;
 
 @Entity
-@Table(name = "MERCHANT_STORE", schema=SchemaConstant.SALESMANAGER_SCHEMA)
+@Table(name = "S1_MERCHANT_STORE", schema=SchemaConstant.SALESMANAGER_SCHEMA)
 public class MerchantStore extends SalesManagerEntity<Integer, MerchantStore> {
 	private static final long serialVersionUID = 7671103335743647655L;
 	
@@ -102,7 +102,7 @@ public class MerchantStore extends SalesManagerEntity<Integer, MerchantStore> {
 
 	@NotEmpty
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "MERCHANT_LANGUAGE")
+	@JoinTable(name = "S1_MERCHANT_LANGUAGE")
 	private List<Language> languages = new ArrayList<Language>();
 	
 	@Column(name = "USE_CACHE")

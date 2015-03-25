@@ -47,7 +47,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 
 @Entity
 @EntityListeners(value = AuditListener.class)
-@Table(name = "PRODUCT", schema=SchemaConstant.SALESMANAGER_SCHEMA)
+@Table(name = "S1_PRODUCT", schema=SchemaConstant.SALESMANAGER_SCHEMA)
 public class Product extends SalesManagerEntity<Long, Product> implements Auditable {
 	private static final long serialVersionUID = -6228066416290007047L;
 
@@ -82,7 +82,7 @@ public class Product extends SalesManagerEntity<Long, Product> implements Audita
 	private MerchantStore merchantStore;
 	
 	@ManyToMany(fetch=FetchType.LAZY, cascade = {CascadeType.REFRESH})
-	@JoinTable(name = "PRODUCT_CATEGORY", schema=SchemaConstant.SALESMANAGER_SCHEMA, joinColumns = { 
+	@JoinTable(name = "S1_PRODUCT_CATEGORY", schema=SchemaConstant.SALESMANAGER_SCHEMA, joinColumns = { 
 			@JoinColumn(name = "PRODUCT_ID", nullable = false, updatable = false) }
 			, 
 			inverseJoinColumns = { @JoinColumn(name = "CATEGORY_ID", 

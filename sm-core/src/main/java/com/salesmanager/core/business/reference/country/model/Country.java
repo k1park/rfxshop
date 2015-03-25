@@ -23,7 +23,7 @@ import com.salesmanager.core.business.reference.zone.model.Zone;
 import com.salesmanager.core.constants.SchemaConstant;
 
 @Entity
-@Table(name = "COUNTRY", schema=SchemaConstant.SALESMANAGER_SCHEMA)
+@Table(name = "S1_COUNTRY", schema=SchemaConstant.SALESMANAGER_SCHEMA)
 @Cacheable
 public class Country extends SalesManagerEntity<Integer, Country> {
 	private static final long serialVersionUID = -7388011537255588035L;

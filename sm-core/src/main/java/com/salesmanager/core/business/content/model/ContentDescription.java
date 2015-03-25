@@ -13,7 +13,7 @@ import com.salesmanager.core.business.common.model.Description;
 import com.salesmanager.core.business.reference.language.model.Language;
 
 @Entity
-@Table(name="CONTENT_DESCRIPTION", schema="SALESMANAGER",uniqueConstraints={
+@Table(name = "S1_CONTENT_DESCRIPTION", schema="SALESMANAGER",uniqueConstraints={
 		@UniqueConstraint(columnNames={
 			"CONTENT_ID",
 			"LANGUAGE_ID"

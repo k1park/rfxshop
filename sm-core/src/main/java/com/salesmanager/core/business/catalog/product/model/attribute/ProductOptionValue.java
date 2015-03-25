@@ -31,7 +31,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 
 
 @Entity
-@Table(name="PRODUCT_OPTION_VALUE", schema=SchemaConstant.SALESMANAGER_SCHEMA, uniqueConstraints=
+@Table(name = "S1_PRODUCT_OPTION_VALUE", schema=SchemaConstant.SALESMANAGER_SCHEMA, uniqueConstraints=
 	@UniqueConstraint(columnNames = {"MERCHANT_ID", "PRODUCT_OPTION_VAL_CODE"}))
 public class ProductOptionValue extends SalesManagerEntity<Long, ProductOptionValue> {
 	private static final long serialVersionUID = 3736085877929910891L;

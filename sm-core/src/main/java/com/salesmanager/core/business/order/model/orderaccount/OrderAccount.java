@@ -24,7 +24,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 import com.salesmanager.core.utils.CloneUtils;
 
 @Entity
-@Table(name = "ORDER_ACCOUNT", schema = SchemaConstant.SALESMANAGER_SCHEMA)
+@Table(name = "S1_ORDER_ACCOUNT", schema = SchemaConstant.SALESMANAGER_SCHEMA)
 public class OrderAccount extends SalesManagerEntity<Long, OrderAccount> {
 private static final long serialVersionUID = -2429388347536330540L;
 

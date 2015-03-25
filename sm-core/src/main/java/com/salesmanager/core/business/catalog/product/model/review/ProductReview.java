@@ -32,7 +32,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 
 @Entity
 @EntityListeners(value = AuditListener.class)
-@Table(name = "PRODUCT_REVIEW", schema=SchemaConstant.SALESMANAGER_SCHEMA)
+@Table(name = "S1_PRODUCT_REVIEW", schema=SchemaConstant.SALESMANAGER_SCHEMA)
 public class ProductReview extends SalesManagerEntity<Long, ProductReview> implements Auditable {
 	private static final long serialVersionUID = -7509351278087554383L;
 

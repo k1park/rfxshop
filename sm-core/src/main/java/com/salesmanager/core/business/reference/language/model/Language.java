@@ -25,7 +25,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 
 @Entity
 @EntityListeners(value = AuditListener.class)
-@Table(name = "LANGUAGE", schema=SchemaConstant.SALESMANAGER_SCHEMA)
+@Table(name = "S1_LANGUAGE", schema=SchemaConstant.SALESMANAGER_SCHEMA)
 @Cacheable
 public class Language extends SalesManagerEntity<Integer, Language> implements Auditable {
 	private static final long serialVersionUID = -7676627812941330669L;

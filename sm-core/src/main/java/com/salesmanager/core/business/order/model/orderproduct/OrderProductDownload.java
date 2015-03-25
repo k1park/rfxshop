@@ -16,7 +16,7 @@ import com.salesmanager.core.business.generic.model.SalesManagerEntity;
 import com.salesmanager.core.constants.SchemaConstant;
 
 @Entity
-@Table (name="ORDER_PRODUCT_DOWNLOAD", schema=SchemaConstant.SALESMANAGER_SCHEMA)
+@Table(name = "S1_ORDER_PRODUCT_DOWNLOAD", schema=SchemaConstant.SALESMANAGER_SCHEMA)
 public class OrderProductDownload extends SalesManagerEntity<Long, OrderProductDownload> implements Serializable {
 	private static final long serialVersionUID = -8935511990745477240L;
 	

@@ -25,7 +25,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 
 
 @Entity
-@Table(name = "TAX_RATE_DESCRIPTION" , schema=SchemaConstant.SALESMANAGER_SCHEMA ,uniqueConstraints={
+@Table(name = "S1_TAX_RATE_DESCRIPTION" , schema=SchemaConstant.SALESMANAGER_SCHEMA ,uniqueConstraints={
 		@UniqueConstraint(columnNames={
 				"TAX_RATE_ID",
 				"LANGUAGE_ID"

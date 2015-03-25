@@ -12,7 +12,7 @@ import javax.persistence.UniqueConstraint;
 import com.salesmanager.core.business.common.model.Description;
 
 @Entity
-@Table(name = "MANUFACTURER_DESCRIPTION", schema="SALESMANAGER", uniqueConstraints={
+@Table(name = "S1_MANUFACTURER_DESCRIPTION", schema="SALESMANAGER", uniqueConstraints={
 	@UniqueConstraint(columnNames={
 			"MANUFACTURER_ID",
 			"LANGUAGE_ID"

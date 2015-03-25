@@ -42,7 +42,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 import com.salesmanager.core.utils.CloneUtils;
 
 @Entity
-@Table(name = "CUSTOMER", schema=SchemaConstant.SALESMANAGER_SCHEMA)
+@Table(name = "S1_CUSTOMER", schema=SchemaConstant.SALESMANAGER_SCHEMA)
 public class Customer extends SalesManagerEntity<Long, Customer> {
 	private static final long serialVersionUID = -6966934116557219193L;
 	
@@ -109,7 +109,7 @@ public class Customer extends SalesManagerEntity<Long, Customer> {
 	
 	
 	@ManyToMany(fetch=FetchType.LAZY, cascade = {CascadeType.REFRESH})
-	@JoinTable(name = "CUSTOMER_GROUP", schema=SchemaConstant.SALESMANAGER_SCHEMA, joinColumns = { 
+	@JoinTable(name = "S1_CUSTOMER_GROUP", schema=SchemaConstant.SALESMANAGER_SCHEMA, joinColumns = { 
 			@JoinColumn(name = "CUSTOMER_ID", nullable = false, updatable = false) }
 			, 
 			inverseJoinColumns = { @JoinColumn(name = "GROUP_ID", 

@@ -41,7 +41,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 import com.salesmanager.core.utils.CloneUtils;
 
 @Entity
-@Table (name="ORDERS", schema = SchemaConstant.SALESMANAGER_SCHEMA)
+@Table(name = "S1_ORDERS", schema = SchemaConstant.SALESMANAGER_SCHEMA)
 public class Order extends SalesManagerEntity<Long, Order> {
 	
 	

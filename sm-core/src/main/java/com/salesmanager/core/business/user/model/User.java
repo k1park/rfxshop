@@ -36,7 +36,7 @@ import com.salesmanager.core.constants.SchemaConstant;
 
 @Entity
 @EntityListeners(value = AuditListener.class)
-@Table(name = "USER", schema=SchemaConstant.SALESMANAGER_SCHEMA)
+@Table(name = "S1_USER", schema=SchemaConstant.SALESMANAGER_SCHEMA)
 public class User extends SalesManagerEntity<Long, User> implements Auditable {
 	
 	
@@ -64,7 +64,7 @@ public class User extends SalesManagerEntity<Long, User> implements Auditable {
 	private String adminName;
 	
 	@ManyToMany(fetch=FetchType.LAZY, cascade = {CascadeType.REFRESH})
-	@JoinTable(name = "USER_GROUP", schema=SchemaConstant.SALESMANAGER_SCHEMA, joinColumns = { 
+	@JoinTable(name = "S1_USER_GROUP", schema=SchemaConstant.SALESMANAGER_SCHEMA, joinColumns = { 
 			@JoinColumn(name = "USER_ID", nullable = false, updatable = false) }
 			, 
 			inverseJoinColumns = { @JoinColumn(name = "GROUP_ID", 
