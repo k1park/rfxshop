@@ -208,7 +208,7 @@ public class InitializationDatabaseImpl implements InitializationDatabase {
 		store.setInBusinessSince(date);
 		store.setZone(qc);
 		store.setStorename("Default store");
-		store.setStorephone("888-888-8888");
+		store.setStorephone("888-555-8888");
 		store.setCode(MerchantStore.DEFAULT_STORE);
 		store.setStorecity("My city");
 		store.setStoreaddress("1234 Street address");
