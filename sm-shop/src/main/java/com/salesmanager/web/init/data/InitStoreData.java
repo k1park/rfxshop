@@ -146,6 +146,7 @@ public class InitStoreData implements InitData {
 		//2 languages by default
 		Language en = languageService.getByCode("en");
 		Language fr = languageService.getByCode("fr");
+		Language kr = languageService.getByCode("kr");
 		
 		Country canada = countryService.getByCode("CA");
 		Zone zone = zoneService.getByCode("QC");
