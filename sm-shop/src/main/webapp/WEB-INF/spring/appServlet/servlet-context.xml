@@ -71,8 +71,9 @@
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="maxUploadSize" value="5000000000"/>
 	</beans:bean>
-	
+	<!-- 
 	<beans:bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+
 		<beans:property name="basenames">
 			<beans:list>
   				<beans:value>bundles/shopizer</beans:value>
@@ -82,7 +83,17 @@
   			</beans:list>
   		</beans:property>
   	</beans:bean>
+  	-->
   	
+  	 <beans:bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<beans:property 
+			name="basenames" 
+			value="classpath:bundles/shopizer,classpath:bundles/messages,classpath:bundles/shipping,classpath:bundles/payment"
+		/>
+        <beans:property name="fileEncodings" value="UTF-8"/>
+        <beans:property name="defaultEncoding" value="UTF-8"/>
+    </beans:bean>
+    
   	<!--
   	<beans:bean id="appConfiguration" class="com.salesmanager.web.utils.AppConfiguration">
 		<beans:property name="properties">
