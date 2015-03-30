@@ -50,7 +50,8 @@ response.setDateHeader ("Expires", -1);
 
 		<div class="row">
 
-  			<div class="span4"><a class="brand" href="#"><img src="<c:url value="/resources/img/shopizer_small.jpg" />"/></a></div>
+  			<!-- <div class="span4"><a class="brand" href="#"><img src="<c:url value="/resources/img/shopizer_small.jpg" />"/></a></div> -->
+  			<div class="span4"><a class="brand" href="#"><img src="<c:url value="/resources/img/rfxsoft-mid.png" />"/></a></div>
 
   			<div class="span4 offset4">
 
