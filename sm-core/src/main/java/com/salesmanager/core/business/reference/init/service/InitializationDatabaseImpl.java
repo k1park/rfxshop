@@ -192,10 +192,10 @@ public class InitializationDatabaseImpl implements InitializationDatabase {
 		
 		Date date = new Date(System.currentTimeMillis());
 		
-		Language en = languageService.getByCode("en");
-		Country ca = countryService.getByCode("CA");
-		Currency currency = currencyService.getByCode("CAD");
-		Zone qc = zoneService.getByCode("QC");
+		Language en = languageService.getByCode("ko");
+		Country ca = countryService.getByCode("KR");
+		Currency currency = currencyService.getByCode("KRW");
+		Zone qc = zoneService.getByCode("SE");
 		
 		List<Language> supportedLanguages = new ArrayList<Language>();
 		supportedLanguages.add(en);
@@ -208,13 +208,13 @@ public class InitializationDatabaseImpl implements InitializationDatabase {
 		store.setInBusinessSince(date);
 		store.setZone(qc);
 		store.setStorename("Default store");
-		store.setStorephone("888-555-8888");
+		store.setStorephone("02-573-8603");
 		store.setCode(MerchantStore.DEFAULT_STORE);
-		store.setStorecity("My city");
-		store.setStoreaddress("1234 Street address");
-		store.setStorepostalcode("H2H-2H2");
-		store.setStoreEmailAddress("test@test.com");
-		store.setDomainName("localhost:8080");
+		store.setStorecity("Seoul");
+		store.setStoreaddress("서울시 서초구 논현로 13길 11 소암빌딩 602호");
+		store.setStorepostalcode("137-895");
+		store.setStoreEmailAddress("makeknow@rfxsoft.com");
+		store.setDomainName("domain:8080");
 		store.setStoreTemplate("bootstrap");
 		store.setLanguages(supportedLanguages);
 		
