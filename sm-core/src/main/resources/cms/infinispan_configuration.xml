@@ -19,7 +19,7 @@
 		<!-- disable jmx in prod -->
 		<jmxStatistics enabled="false"/>
 		<loaders passivation="false" shared="false" preload="false">		
-<!-- 		<loader class="org.infinispan.loaders.jdbc.mixed.JdbcMixedCacheStore"
+ 		<loader class="org.infinispan.loaders.jdbc.mixed.JdbcMixedCacheStore"
                 fetchPersistentState="false" ignoreModifications="false"
                 purgeOnStartup="false">
                 <properties>
@@ -36,9 +36,9 @@
                     <property name="connectionFactoryClass"
                         value="org.infinispan.loaders.jdbc.connectionfactory.PooledConnectionFactory" />
                     <property name="connectionUrl"
-                        value="jdbc:mysql://localhost:3306/salesmanager_cms" />
-                    <property name="userName" value="username" />
-                    <property name="password" value="password" />
+                        value="jdbc:mysql://192.168.0.15:3306/salesmanager_cms" />
+                    <property name="userName" value="jman31" />
+                    <property name="password" value="rfxsoft00" />
                     <property name="driverClass" value="com.mysql.jdbc.Driver" />
                     <property name="idColumnTypeForStrings" value="VARCHAR(255)" />
                     <property name="idColumnTypeForBinary" value="VARCHAR(255)" />
@@ -51,9 +51,9 @@
                     <property name="createTableOnStartForStrings" value="true" />
                     <property name="createTableOnStartForBinary" value="true" />
                 </properties>
-          </loader> -->
+          </loader>
 
-
+<!--
 			  
 			  <loader class="org.infinispan.loaders.file.FileCacheStore" fetchPersistentState="false"
 	               ignoreModifications="false" purgeOnStartup="false">
@@ -61,7 +61,7 @@
 	                 <property name="location" value="./infinispan/store"/>
 	               </properties>
 	          </loader>
-	          
+	      -->    
 		
 			</loaders>
 		
