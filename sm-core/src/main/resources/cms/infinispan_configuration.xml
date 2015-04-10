@@ -19,8 +19,10 @@
 		<!-- disable jmx in prod -->
 		<jmxStatistics enabled="false"/>
 		<loaders passivation="false" shared="false" preload="false">		
+ 		
+<!--
  		<loader class="org.infinispan.loaders.jdbc.mixed.JdbcMixedCacheStore"
-                fetchPersistentState="false" ignoreModifications="false"
+                fetchPersistentState="true" ignoreModifications="false"
                 purgeOnStartup="false">
                 <properties>
                     <property name="tableNamePrefixForStrings" value="ISPN_MIXED_STR_TABLE" />
@@ -52,16 +54,16 @@
                     <property name="createTableOnStartForBinary" value="true" />
                 </properties>
           </loader>
+	      -->
 
-<!--
 			  
 			  <loader class="org.infinispan.loaders.file.FileCacheStore" fetchPersistentState="false"
 	               ignoreModifications="false" purgeOnStartup="false">
 	               <properties>
-	                 <property name="location" value="./infinispan/store"/>
+	                 <property name="location" value="/home/infinispan/store"/>
 	               </properties>
 	          </loader>
-	      -->    
+    
 		
 			</loaders>
 		
