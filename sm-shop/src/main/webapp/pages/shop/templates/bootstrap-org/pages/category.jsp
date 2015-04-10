@@ -13,11 +13,6 @@ response.setDateHeader ("Expires", -1);
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
-
-<!-- 
-===  category.jsp ===
- -->
-
  
  <script src="<c:url value="/resources/js/jquery.easing.1.3.js" />"></script>
  <script src="<c:url value="/resources/js/jquery.quicksand.js" />"></script>

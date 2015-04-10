@@ -14,10 +14,6 @@ response.setDateHeader ("Expires", -1);
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 
-<!-- 
-===  product.jsp ===
- -->
- 
 <script src="<c:url value="/resources/js/jquery.elevateZoom-3.0.8.min.js" />"></script>
 <script src="<c:url value="/resources/js/jquery.raty.min.js" />"></script>
 

@@ -14,18 +14,18 @@ response.setDateHeader ("Expires", -1);
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 
-<!-- 
-===  notFound.jsp ===
- -->
+			<jsp:include page="/pages/shop/templates/bootstrap/sections/breadcrumb.jsp" />
+            
+            
+            <div class="row-fluid">
 
-		<table class="container">
-			<tr>
-				<td width="60"><img src="<c:url value="/resources/img/important-icon.png"/>" width="50"></td>
-				<td valign="middle"><h3><s:message code="message.resource.notfound" text="Page not found"/></h3></td>
-			</tr>
-		</table>
-					
+                <div class="span12">
+					<c:out value="${content.description}" escapeXml="false"/>
+                </div>
+            </div>
+            
 
+        		
+    
 
-
-		
+    

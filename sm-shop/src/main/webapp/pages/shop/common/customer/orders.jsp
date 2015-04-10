@@ -17,7 +17,9 @@ response.setDateHeader ("Expires", -1);
 <%@page pageEncoding="UTF-8"%>
 <c:set var="ordersAction" value="${pageContext.request.contextPath}/shop/customer/orders.html"/>
 <c:set var="customerOrder" value="${pageContext.request.contextPath}/shop/customer/order.html"/>
-
+<!-- 
+===  orders.jsp ===
+ -->
 <div id="main-content" class="container clearfix row-fluid">
 		<div class="span12 common-row">
 

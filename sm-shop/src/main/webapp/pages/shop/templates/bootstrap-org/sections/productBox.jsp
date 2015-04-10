@@ -13,9 +13,7 @@ response.setDateHeader ("Expires", -1);
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
-<!-- 
-===  productBox.jsp ===
- -->
+
 										<c:forEach items="${requestScope.ITEMS}" var="product">
 											<li class="span3" data-id="${product.id}" item-price="${product.price}" item-name="${product.description.name}" item-order="${product.sortOrder}">
 												<div class="product-box">                                        

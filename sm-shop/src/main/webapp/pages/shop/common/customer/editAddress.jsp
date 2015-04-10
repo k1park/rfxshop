@@ -14,7 +14,10 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 
-
+<!-- 
+===  editAddress.jsp ===
+ -->
+ 
 <!-- requires functions.jsp -->
 <script src="<c:url value="/resources/js/jquery.maskedinput.min.js" />"></script>
 <script src="<c:url value="/resources/js/shop-customer.js" />"></script>

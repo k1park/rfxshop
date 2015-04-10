@@ -12,9 +12,6 @@ response.setDateHeader ("Expires", -1);
 <%@ taglib uri="/WEB-INF/shopizer-tags.tld" prefix="sm" %>
 <%@ taglib uri="/WEB-INF/shopizer-functions.tld" prefix="display" %> 
 
-<!-- 
-===  navbar.jsp ===
- -->
 <!-- TT Typeahead js files -->
 <script src="<c:url value="/resources/js/hogan.js" />"></script>
 <script src="<c:url value="/resources/js/typeahead.min.js" />"></script>

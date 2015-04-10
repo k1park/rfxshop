@@ -23,9 +23,7 @@ response.setDateHeader ("Expires", -1);
  
  
  <html xmlns="http://www.w3.org/1999/xhtml"> 
- <!-- 
-===  categoryLayout.jsp ===
- -->
+ 
  
      <head>
         	 	<meta charset="utf-8">

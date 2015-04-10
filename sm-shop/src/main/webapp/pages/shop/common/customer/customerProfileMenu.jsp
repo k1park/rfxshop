@@ -13,7 +13,9 @@ response.setDateHeader ("Expires", -1);
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
-
+<!-- 
+===  customerProfileMenu.jsp ===
+ -->
 								<c:set var="billing" value="${pageContext.request.contextPath}/shop/customer/billing.html"/>
 								<ul class="nav nav-list">
 									<li><a href="<c:url value="/shop/customer/dashboard.html"/>"><i class="fa fa-angle-right"></i> <s:message code="label.customer.myaccount" text="My account"/></a></li>

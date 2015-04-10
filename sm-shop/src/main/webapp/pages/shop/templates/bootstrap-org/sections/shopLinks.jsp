@@ -4,9 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <%@ page session="false" %>
-<!-- 
-===  shopLinks.jsp ===
- -->
+
 	<!-- required common scripts -->
 	<script src="<c:url value="/resources/js/shop-functions.js" />"></script>
     <jsp:include page="/resources/js/functions.jsp" />

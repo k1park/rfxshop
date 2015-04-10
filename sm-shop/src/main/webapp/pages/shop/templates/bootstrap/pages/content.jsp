@@ -13,7 +13,9 @@ response.setDateHeader ("Expires", -1);
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
-
+<!-- 
+===  content.jsp ===
+ -->
 			<jsp:include page="/pages/shop/templates/bootstrap/sections/breadcrumb.jsp" />
             
             

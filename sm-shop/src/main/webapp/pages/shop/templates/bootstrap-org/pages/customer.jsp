@@ -13,19 +13,9 @@ response.setDateHeader ("Expires", -1);
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
+ 
+<%
+/** Nothing just use the common customer dashboard page **/
+%>
 
-<!-- 
-===  notFound.jsp ===
- -->
-
-		<table class="container">
-			<tr>
-				<td width="60"><img src="<c:url value="/resources/img/important-icon.png"/>" width="50"></td>
-				<td valign="middle"><h3><s:message code="message.resource.notfound" text="Page not found"/></h3></td>
-			</tr>
-		</table>
-					
-
-
-
-		
+<jsp:include page="/pages/shop/common/customer/dashboard.jsp" />

@@ -6,6 +6,9 @@
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
+<!-- 
+===  miniartinfo.jsp ===
+ -->
 						<!-- display is ajax driven -->
   		 			    <span id="cartinfo">
                   					<span id="cartqty">(0&nbsp;<s:message code="label.generic.item" text="item" />)</span><span id="cartprice"></span>

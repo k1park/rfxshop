@@ -13,7 +13,9 @@ response.setDateHeader ("Expires", -1);
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>   
-
+<!-- 
+===  paypal.jsp ===
+ -->
 
           <div class="control-group">
             <label class="control-label"><s:message code="label.payment.paypal.usepaypal" text="Use PayPal"/></label>

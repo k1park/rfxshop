@@ -13,7 +13,9 @@ response.setDateHeader ("Expires", -1);
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
-
+<!-- 
+===  creditcard.jsp ===
+ -->
 <script src="<c:url value="/resources/js/jquery.creditCardValidator.js" />"></script>
 
 <script>$.ajax({url: "<c:url value="/shop/reference/creditCardDates.html"/>",type: "GET",success: function(data){populateData($('#creditCardYears'), data, '${order.payment['creditcard_card_expirationyear']}');	}})</script>

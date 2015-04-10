@@ -10,7 +10,9 @@ response.setDateHeader ("Expires", -1);
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="/WEB-INF/shopizer-tags.tld" prefix="sm" %> 
-
+<!-- 
+===  breadcrump.jsp ===
+ -->
 <div class="row-fluid">
 
 	<div class="span12">

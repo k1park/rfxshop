@@ -13,7 +13,9 @@ response.setDateHeader ("Expires", -1);
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%> 
-
+<!-- 
+===  confirmation.jsp ===
+ -->
 <script type="text/javascript">
 
 $(document).ready(function() {

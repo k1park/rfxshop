@@ -14,6 +14,9 @@ response.setDateHeader ("Expires", -1);
 
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
+<!-- 
+===  review.jsp ===
+ -->
 <script src="<c:url value="/resources/js/jquery.raty.min.js" />"></script>
 
 					<div id="review" class="row-fluid">

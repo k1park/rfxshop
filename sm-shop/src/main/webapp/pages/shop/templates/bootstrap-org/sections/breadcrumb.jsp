@@ -10,22 +10,24 @@ response.setDateHeader ("Expires", -1);
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="/WEB-INF/shopizer-tags.tld" prefix="sm" %> 
- 
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
 
-<!-- 
-===  notFound.jsp ===
- -->
+<div class="row-fluid">
 
-		<table class="container">
-			<tr>
-				<td width="60"><img src="<c:url value="/resources/img/important-icon.png"/>" width="50"></td>
-				<td valign="middle"><h3><s:message code="message.resource.notfound" text="Page not found"/></h3></td>
-			</tr>
-		</table>
-					
+	<div class="span12">
 
-
-
+		<ul class="breadcrumb">
 		
+		
+		  <c:forEach items="${requestScope.BREADCRUMB.breadCrumbs}" var="breadcrumb" varStatus="count">
+			  <li class="active">
+			    <a href="${breadcrumb.url}<sm:breadcrumbParam/>">${breadcrumb.label}</a> <span class="divider">/</span>
+			  </li>
+		  </c:forEach>
+		
+		</ul>
+
+	</div>
+
+
+
+</div>

@@ -17,5 +17,7 @@ response.setDateHeader ("Expires", -1);
 <%
 /** Nothing just use the common customer dashboard page **/
 %>
-
+<!-- 
+===  customer.jsp ===
+ -->
 <jsp:include page="/pages/shop/common/customer/dashboard.jsp" />

@@ -14,9 +14,7 @@ response.setDateHeader ("Expires", -1);
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
-<!-- 
-===  footer.jsp ===
- -->
+
 	  <!-- footer -->
             <footer>
                 <div id="footer" class="row-fluid">  

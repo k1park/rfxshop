@@ -13,7 +13,9 @@ response.setDateHeader ("Expires", -1);
 
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
-
+<!-- 
+===  addToCartProduct.jsp ===
+ -->
 <script src="<c:url value="/resources/js/product.js" />"></script>
 <script>
 

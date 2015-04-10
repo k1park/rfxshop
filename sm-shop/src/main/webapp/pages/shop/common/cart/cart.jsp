@@ -11,7 +11,9 @@
 <c:url value="/shop/cart/removeShoppingCartItem.html"
 	var="removeShoppingCartItemUrl" />
 
-
+<!-- 
+===  cart.jsp ===
+ -->
 
 <div id="main-content" class="row-fluid show-grid container">
 

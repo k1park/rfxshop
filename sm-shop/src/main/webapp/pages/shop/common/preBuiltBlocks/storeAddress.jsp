@@ -5,7 +5,9 @@
 
 <%@ page session="false" %>
 
-
+<!-- 
+===  storeAddress.jsp ===
+ -->
 
  <address> 
  	<div itemscope itemtype="http://schema.org/Organization"> 

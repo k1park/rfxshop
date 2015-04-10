@@ -14,9 +14,7 @@ response.setDateHeader ("Expires", -1);
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
  
-<!-- 
-===  search.jsp ===
- -->
+
  
  <script>
  

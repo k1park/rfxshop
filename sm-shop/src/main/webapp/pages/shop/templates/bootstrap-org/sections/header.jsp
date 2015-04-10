@@ -13,9 +13,7 @@ response.setDateHeader ("Expires", -1);
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
-<!-- 
-===  header.jsp ===
- -->
+
 			<!-- header -->
 			<div id="mainmenu" class="row-fluid">
 				

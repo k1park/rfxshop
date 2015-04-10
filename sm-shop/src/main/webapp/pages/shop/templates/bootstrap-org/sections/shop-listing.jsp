@@ -3,9 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="/WEB-INF/shopizer-tags.tld" prefix="sm" %> 
-<!-- 
-===  shop-listing.jsp ===
- -->
+
 <%@ page session="false" %>
 
 /**

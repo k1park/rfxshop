@@ -15,7 +15,9 @@ response.setDateHeader ("Expires", -1);
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 
-
+<!-- 
+===  minicart.jsp ===
+ -->
 
 <div class="cartbox" id="cart-box">
 	<div class="box-content clearfix">

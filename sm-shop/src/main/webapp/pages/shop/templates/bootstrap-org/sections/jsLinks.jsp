@@ -5,9 +5,7 @@
 
 <%@ page session="false" %>
 
-<!-- 
-===  jslink.jsp ===
- -->
+
     <script src="<c:url value="/resources/templates/bootstrap/js/bootstrap-button.js" />"></script>
     <script src="<c:url value="/resources/templates/bootstrap/js/bootstrap-modal.js" />"></script>
     <script src="<c:url value="/resources/templates/bootstrap/js/bootstrap-tab.js" />"></script>

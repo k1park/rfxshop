@@ -14,27 +14,23 @@ response.setDateHeader ("Expires", -1);
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
  
-<!-- 
-===  landing.jsp ===
- -->
+
 
 
 
 			<c:if test="${page!=null}">
-			<!-- page!=null  -->
 			<div class="row-fluid">
           		    <div class="span12">
           			    <span id="homeText"><c:out value="${page.description}" escapeXml="false"/></span>
           		    </div>
 			</div>
 			</c:if>
-			<!-- c:if  --> 
+			
 			<br/>
 			<sm:shopProductGroup groupName="FEATURED_ITEM"/>
 			<sm:shopProductGroup groupName="SPECIALS"/>
 			
 			<c:if test="${requestScope.FEATURED_ITEM!=null || requestScope.SPECIALS!=null}" >
-			<!-- requestScope.FEATURED_ITEM!=null || requestScope.SPECIALS!=null  -->
 			<div class="row-fluid">
 				<div class="span12">
 					<ul class="nav nav-tabs home" id="product-tab">
@@ -44,7 +40,7 @@ response.setDateHeader ("Expires", -1);
 					<div class="tab-content">
 						<!-- one div by section -->
 						<c:if test="${requestScope.FEATURED_ITEM!=null}" >
-						<!-- requestScope.FEATURED_ITEM!=null  -->
+						
 						<div class="tab-pane active" id="tab1">
 									<ul class="thumbnails product-list">
 									    <!-- Iterate over featuredItems -->
@@ -56,7 +52,6 @@ response.setDateHeader ("Expires", -1);
 						</div>
 						</c:if>
 						<c:if test="${requestScope.SPECIALS!=null}" >
-						<!-- requestScope.SPECIALS!=null  -->
 						<div class="tab-pane <c:if test="${requestScope.FEATURED_ITEM==null}">active</c:if>" id="tab2">
 									<ul class="thumbnails product-list">
 										<!-- Iterate over featuredItems -->
