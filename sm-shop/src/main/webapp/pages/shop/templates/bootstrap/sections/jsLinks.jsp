@@ -23,11 +23,14 @@
 
         <script type="text/javascript">
 
+        var prdTab = $('#product-tab');
+        if(prdTab!=null) {
             $('#product-tab a:first').tab('show');
             $('#product-tab a').click(function (e) {
             		e.preventDefault();
             		$(this).tab('show');
-            }) 
+            }) 	
+        }
             
             
         </script>
