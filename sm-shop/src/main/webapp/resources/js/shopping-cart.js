@@ -30,14 +30,20 @@
 	function initBindings() {
 		
 		/** add to cart **/
-		$(".addToCart").click(function(){
-			addToCart($(this).attr("productId"));
-	    });
-		
-    	$("#open-cart").click(function(e) {
-    		log('Open cart');
-    		displayMiniCart();
-    	});
+		if($(".addToCart")!=null) {
+			$(".addToCart").click(function(){
+				addToCart($(this).attr("productId"));
+		    });			
+		}
+
+		if($("#open-cart")!=null) {
+			
+	    	$("#open-cart").click(function(e) {
+	    		log('Open cart');
+	    		displayMiniCart();
+	    	});			
+		}
+
 		
 	}
 	
